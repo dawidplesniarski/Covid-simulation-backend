@@ -26,6 +26,12 @@ public class SimulationsController {
     }
 
     @CrossOrigin
+    @GetMapping("/findBySimulation/{simulation}")
+    public ResponseEntity<SimulationDTO> findBySimulationName(@PathVariable String simulation) {
+        return ResponseEntity.ok(simulationService.findBySimulationName(simulation));
+    }
+
+    @CrossOrigin
     @PostMapping("/addSimulation")
     public ResponseEntity<Simulation> addSimulation(@RequestBody SimulationDTO simulationDTO) {
         return ResponseEntity.status(201).body(simulationService.addSimulation(simulationDTO));

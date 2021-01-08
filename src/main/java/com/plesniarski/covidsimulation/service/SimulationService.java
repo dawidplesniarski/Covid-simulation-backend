@@ -8,4 +8,5 @@ import java.util.List;
 public interface SimulationService {
     Simulation addSimulation(SimulationDTO simulationDTO);
     List<SimulationDTO> findAll();
+    SimulationDTO findBySimulationName(String simulationName);
 }

@@ -42,4 +42,9 @@ public class SimulationServiceImpl implements SimulationService {
                 .map(Simulation::dto)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public SimulationDTO findBySimulationName(String simulationName) {
+        return simulationsRepository.findBySimulationName(simulationName).dto();
+    }
 }
