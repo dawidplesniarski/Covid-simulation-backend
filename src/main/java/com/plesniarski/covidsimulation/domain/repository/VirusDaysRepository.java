@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface VirusDaysRepository extends JpaRepository<VirusDay, Long> {
     List<VirusDay> findBySimulationName(String simulationName);
+    void deleteBySimulationName(String simulationName);
 }

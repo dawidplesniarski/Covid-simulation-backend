@@ -24,6 +24,7 @@ public class SimulationServiceImpl implements SimulationService {
     public Simulation addSimulation(SimulationDTO simulationDTO) {
         final Simulation simulation = new Simulation(
                 simulationDTO.getSimulationName(),
+                simulationDTO.getPopulation(),
                 simulationDTO.getInitialNumberOfInfected(),
                 simulationDTO.getInfectionRate(),
                 simulationDTO.getMortalityRate(),

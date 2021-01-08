@@ -37,4 +37,10 @@ public class VirusDayController {
     public ResponseEntity<List<VirusDayDTO>> getVirusDaysBySimulation(@PathVariable String simulation) {
         return ResponseEntity.ok(virusDayService.findBySimulation(simulation));
     }
+
+    @CrossOrigin
+    @GetMapping("/generateSimulation/{simulation}")
+    public ResponseEntity<List<VirusDayDTO>> generateSimulation(@PathVariable String simulation) {
+        return ResponseEntity.ok(virusDayService.findVirusDays(simulation));
+    }
 }

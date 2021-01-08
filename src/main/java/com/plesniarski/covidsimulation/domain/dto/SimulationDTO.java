@@ -3,6 +3,7 @@ package com.plesniarski.covidsimulation.domain.dto;
 public class SimulationDTO {
     private Long id;
     private String simulationName;
+    private int population;
     private int initialNumberOfInfected; // początkowa liczba zarażonych
     private double infectionRate; // wskaźnik R zarażających
     private int mortalityRate; //wskaźnik śmiertelności
@@ -12,8 +13,9 @@ public class SimulationDTO {
 
     public SimulationDTO() {}
 
-    public SimulationDTO(String simulationName, int initialNumberOfInfected, double infectionRate, int mortalityRate, int cureTime, int mortalTime, int simulationTime) {
+    public SimulationDTO(String simulationName, int population, int initialNumberOfInfected, double infectionRate, int mortalityRate, int cureTime, int mortalTime, int simulationTime) {
         this.simulationName = simulationName;
+        this.population = population;
         this.initialNumberOfInfected = initialNumberOfInfected;
         this.infectionRate = infectionRate;
         this.mortalityRate = mortalityRate;
@@ -24,6 +26,7 @@ public class SimulationDTO {
 
     public SimulationDTO(Long id,
                          String simulationName,
+                         int population,
                          int initialNumberOfInfected,
                          double infectionRate,
                          int mortalityRate,
@@ -32,6 +35,7 @@ public class SimulationDTO {
                          int simulationTime) {
         this.id = id;
         this.simulationName = simulationName;
+        this.population = population;
         this.initialNumberOfInfected = initialNumberOfInfected;
         this.infectionRate = infectionRate;
         this.mortalityRate = mortalityRate;
@@ -71,4 +75,6 @@ public class SimulationDTO {
     public int getSimulationTime() {
         return simulationTime;
     }
+
+    public int getPopulation() { return population; }
 }
