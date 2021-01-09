@@ -9,4 +9,5 @@ public interface SimulationService {
     Simulation addSimulation(SimulationDTO simulationDTO);
     List<SimulationDTO> findAll();
     SimulationDTO findBySimulationName(String simulationName);
+    void deleteSimulation(String simulationName);
 }

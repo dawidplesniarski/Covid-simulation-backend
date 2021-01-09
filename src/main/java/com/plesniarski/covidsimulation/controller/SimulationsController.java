@@ -36,4 +36,10 @@ public class SimulationsController {
     public ResponseEntity<Simulation> addSimulation(@RequestBody SimulationDTO simulationDTO) {
         return ResponseEntity.status(201).body(simulationService.addSimulation(simulationDTO));
     }
+
+    @CrossOrigin
+    @DeleteMapping("/deleteSimulation/{simulation}")
+    public void deleteSimulation(@PathVariable String simulation) {
+        simulationService.deleteSimulation(simulation);
+    }
 }

@@ -7,10 +7,12 @@ import com.plesniarski.covidsimulation.service.SimulationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class SimulationServiceImpl implements SimulationService {
 
     private final SimulationsRepository simulationsRepository;
@@ -47,5 +49,10 @@ public class SimulationServiceImpl implements SimulationService {
     @Override
     public SimulationDTO findBySimulationName(String simulationName) {
         return simulationsRepository.findBySimulationName(simulationName).dto();
+    }
+
+    @Override
+    public void deleteSimulation(String simulationName) {
+        simulationsRepository.deleteSimulationBySimulationName(simulationName);
     }
 }
