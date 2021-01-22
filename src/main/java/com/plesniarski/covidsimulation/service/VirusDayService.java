@@ -1,6 +1,5 @@
 package com.plesniarski.covidsimulation.service;
 
-import com.plesniarski.covidsimulation.domain.dto.SimulationDTO;
 import com.plesniarski.covidsimulation.domain.dto.VirusDayDTO;
 import com.plesniarski.covidsimulation.domain.entity.VirusDay;
 
